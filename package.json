@@ -1,0 +1,37 @@
+{
+  "name": "semantic-facesmash",
+  "version": "1.0.1",
+  "description": "facemash is a way to user's post management. ",
+  "main": "distr/js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcflyz/semanticpostsmash.git"
+  },
+  "keywords": [
+    "postsmash",
+    "user",
+    "post",
+    "management"
+  ],
+  "author": "McFlyZa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mcflyz/semanticpostsmash/issues"
+  },
+  "homepage": "https://github.com/mcflyz/semanticpostsmash#readme",
+  "dependencies": {
+    "hoek": "^5.0.3",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglify-es": "^1.0.4",
+    "gulp-useref": "^3.1.5"
+  }
+}
