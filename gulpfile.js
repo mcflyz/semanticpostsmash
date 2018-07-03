@@ -1,6 +1,8 @@
 const gulp = require('gulp'),
 concat = require('gulp-concat'),
 cleanCSS = require('gulp-clean-css'),
+sass = require('gulp-sass'),
+browserSync = require('browser-sync').create(),
 uglify = require('gulp-uglify-es').default;
 
 //all files are moved to dist
@@ -12,8 +14,14 @@ uglify = require('gulp-uglify-es').default;
 //default -> update user html, css, js
 //full -> update everything
 
-
-//alias gulp="./node_modules/gulp/bin/gulp.js"
+//single tasks
+gulp.task('sass', () => gulp.src('app/scss/**/*.scss')
+                            .pipe(sass())
+                            .pipe(gulp.dest('app/css/'))
+                            .pipe(browserSync.reload({
+                                stream: true
+                              }))
+);
 
 gulp.task('htm', () => gulp.src('app/*.htm*')
                             .pipe(concat('index.htm'))
@@ -38,5 +46,6 @@ gulp.task('js-lib', () => gulp.src('node_modules/jquery/dist/jquery.min.js')
                                 .pipe(gulp.dest('dist/js/lib'))
 );
 
-gulp.task('dev', gulp.series('htm', 'css', 'js'));
-gulp.task('prod', gulp.series('htm', 'css', 'js', 'js-lib'));
+//short tasks
+gulp.task('dev', gulp.series('sass','htm', 'css', 'js'));
+gulp.task('prod', gulp.series('dev', 'js-lib'));
