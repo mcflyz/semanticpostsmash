@@ -1,7 +1,145 @@
-body{
-    background-color: white;
+@import url('https://fonts.googleapis.com/css?family=Nunito|Nunito+Sans:400,700,800,900|Roboto+Mono|Roboto+Slab|Roboto:100,400,900');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+%font_1 {
+    font-family: 'Nunito', sans-serif;
+}
+%font_2 {
+    font-family: 'Nunito Sans', sans-serif;
+}
+%font_3 {
+    font-family: 'Roboto', sans-serif;
+}
+%font_4 {
+    font-family: 'Roboto Slab', serif;
+}
+%font_5 {
+    font-family: 'Roboto Mono', monospace;
+}
+
+%flexwrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+%flexwrapcol{
+    @extend %flexwrap;
+    flex-direction: column;
+}
+%flexwraprow{
+    @extend %flexwrap;
+    flex-direction: wrap;
 }
 
 html{
-    background-color: white;
+
+    text-align: center;
+    background-color: lightcoral;
+    .mainContents{
+        @extend %flexwrapcol;
+        body{
+            font: 14px/1 'Open Sans', sans-serif;
+            color: #555;
+            background: #eee;
+        }
+        
+        p {
+            margin: 0 0 20px;
+            line-height: 1.5;
+        }
+        
+        .tabs {
+            min-width: 320px;
+            max-width: 800px;
+            padding: 50px;
+            margin: 0 auto;
+            background: #fff;
+
+            h1 {
+                padding: 50px 0;
+                font-weight: 400;
+                text-align: center;
+            }
+
+            section {
+                display: none;
+                padding: 20px 0 0;
+                border-top: 1px solid #ddd;
+            }
+
+            *, *:before, *:after {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            input {
+                display: none;
+            }
+            
+            ///////////////- TABS -/////////////////////
+            
+            label {
+                display: inline-block;
+                margin: 0 0 -1px;
+                padding: 15px 25px;
+                font-weight: 600;
+                text-align: center;
+                color: #bbb;
+                border: 1px solid transparent;
+            }
+            
+            label:before {
+                font-family: fontawesome;
+                font-weight: normal;
+                margin-right: 10px;
+            }
+            
+            //post
+            label[for*='posts']:before { content: '\f231'; }
+            //albums
+            label[for*='albums']:before { content: '\f030'; }
+            //todo
+            label[for*='todos']:before { content: '\f0ca'; }
+            
+            label:hover {
+            color: #888;
+                cursor: pointer;
+            }
+            
+            input:checked + label {
+                color: #555;
+                border: 1px solid #ddd;
+                border-top: 2px solid orange;
+                border-bottom: 1px solid #fff;
+            }
+            
+            #posts:checked ~ #contentPosts,
+            #albums:checked ~ #contentAlbums,
+            #todos:checked ~ #contentTodos {
+                display: block;
+            }
+            
+            @media screen and (max-width: 650px) {
+                label {
+                    font-size: 0;
+                }
+                label:before {
+                    margin: 0;
+                    font-size: 18px;
+                }
+            }
+            
+            @media screen and (max-width: 400px) {
+                label {
+                    padding: 15px;
+                }
+            }
+
+        }
+        
+    }
+
 }

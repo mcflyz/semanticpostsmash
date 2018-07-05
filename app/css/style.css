@@ -1,5 +1,80 @@
-body {
-  background-color: white; }
+@import url("https://fonts.googleapis.com/css?family=Nunito|Nunito+Sans:400,700,800,900|Roboto+Mono|Roboto+Slab|Roboto:100,400,900");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+html .mainContents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+html .mainContents {
+  flex-direction: column; }
 
 html {
-  background-color: white; }
+  text-align: center;
+  background-color: lightcoral; }
+  html .mainContents body {
+    font: 14px/1 'Open Sans', sans-serif;
+    color: #555;
+    background: #eee; }
+  html .mainContents p {
+    margin: 0 0 20px;
+    line-height: 1.5; }
+  html .mainContents .tabs {
+    min-width: 320px;
+    max-width: 800px;
+    padding: 50px;
+    margin: 0 auto;
+    background: #fff; }
+    html .mainContents .tabs h1 {
+      padding: 50px 0;
+      font-weight: 400;
+      text-align: center; }
+    html .mainContents .tabs section {
+      display: none;
+      padding: 20px 0 0;
+      border-top: 1px solid #ddd; }
+    html .mainContents .tabs *, html .mainContents .tabs *:before, html .mainContents .tabs *:after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box; }
+    html .mainContents .tabs input {
+      display: none; }
+    html .mainContents .tabs label {
+      display: inline-block;
+      margin: 0 0 -1px;
+      padding: 15px 25px;
+      font-weight: 600;
+      text-align: center;
+      color: #bbb;
+      border: 1px solid transparent; }
+    html .mainContents .tabs label:before {
+      font-family: fontawesome;
+      font-weight: normal;
+      margin-right: 10px; }
+    html .mainContents .tabs label[for*='posts']:before {
+      content: '\f231'; }
+    html .mainContents .tabs label[for*='albums']:before {
+      content: '\f030'; }
+    html .mainContents .tabs label[for*='todos']:before {
+      content: '\f0ca'; }
+    html .mainContents .tabs label:hover {
+      color: #888;
+      cursor: pointer; }
+    html .mainContents .tabs input:checked + label {
+      color: #555;
+      border: 1px solid #ddd;
+      border-top: 2px solid orange;
+      border-bottom: 1px solid #fff; }
+    html .mainContents .tabs #posts:checked ~ #contentPosts,
+    html .mainContents .tabs #albums:checked ~ #contentAlbums,
+    html .mainContents .tabs #todos:checked ~ #contentTodos {
+      display: block; }
+    @media screen and (max-width: 650px) {
+      html .mainContents .tabs label {
+        font-size: 0; }
+      html .mainContents .tabs label:before {
+        margin: 0;
+        font-size: 18px; } }
+    @media screen and (max-width: 400px) {
+      html .mainContents .tabs label {
+        padding: 15px; } }
