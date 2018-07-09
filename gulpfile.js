@@ -46,6 +46,11 @@ gulp.task('js-lib', () => gulp.src('node_modules/jquery/dist/jquery.min.js')
                                 .pipe(gulp.dest('dist/js/lib'))
 );
 
+//watch
+gulp.task('watch', function(){
+  gulp.watch('app/scss/**/*.scss', gulp.series('sass')); 
+})
+
 //short tasks
 gulp.task('dev', gulp.series('sass','htm', 'css', 'js'));
 gulp.task('prod', gulp.series('dev', 'js-lib'));
