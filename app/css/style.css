@@ -1,11 +1,14 @@
-/* tabs info posts / albums / todos */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-*, *:before, *:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
+html body .allContents main .usersContent, html body .allContents main .usersContent .card section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
 
+html body .allContents main .usersContent, html body .allContents main .usersContent .card section {
+  flex-direction: column; }
+
+/* tabs info posts / albums / todos */
 html {
   text-align: center; }
   html body {
@@ -27,47 +30,64 @@ html {
       margin: 0 auto;
       background: #fff;
       /* tabs info posts / albums / todos */ }
-      html body .allContents main .tabs section {
-        display: none;
-        padding: 20px 0 0;
-        border-top: 1px solid #ddd; }
-      html body .allContents main .tabs input {
-        display: none; }
-      html body .allContents main .tabs label {
-        display: inline-block;
-        margin: 0 0 -1px;
-        padding: 15px 25px;
-        font-weight: 600;
-        text-align: center;
-        color: #bbb;
-        border: 1px solid transparent; }
-      html body .allContents main .tabs label:before {
-        font-family: fontawesome;
-        font-weight: normal;
-        margin-right: 10px; }
-      html body .allContents main .tabs label[for*='posts']:before {
-        content: '\f231'; }
-      html body .allContents main .tabs label[for*='albums']:before {
-        content: '\f030'; }
-      html body .allContents main .tabs label[for*='todos']:before {
-        content: '\f0ca'; }
-      html body .allContents main .tabs label:hover {
-        color: #888;
-        cursor: pointer; }
-      html body .allContents main .tabs input:checked + label {
-        color: #555;
-        border: 1px solid #ddd;
-        border-top: 2px solid orange;
-        border-bottom: 1px solid #fff; }
-      html body .allContents main .tabs #posts:checked ~ #contentPosts,
-      html body .allContents main .tabs #albums:checked ~ #contentAlbums,
-      html body .allContents main .tabs #todos:checked ~ #contentTodos {
-        display: block; }
-      html body .allContents main .usersContent .card {
-        background-color: lightblue;
-        height: 400px;
-        width: 20%;
-        color: #666; }
+      html body .allContents main .tabs {
+        padding-top: 30px; }
+        html body .allContents main .tabs section {
+          display: none;
+          padding: 20px 0 0;
+          border-top: 1px solid #ddd; }
+        html body .allContents main .tabs input {
+          display: none; }
+        html body .allContents main .tabs label {
+          display: inline-block;
+          margin: 0 0 -1px;
+          padding: 15px 25px;
+          font-weight: 600;
+          text-align: center;
+          color: #bbb;
+          border: 1px solid transparent; }
+        html body .allContents main .tabs label:before {
+          font-family: fontawesome;
+          font-weight: normal;
+          margin-right: 10px; }
+        html body .allContents main .tabs label[for*='posts']:before {
+          content: '\f231'; }
+        html body .allContents main .tabs label[for*='albums']:before {
+          content: '\f030'; }
+        html body .allContents main .tabs label[for*='todos']:before {
+          content: '\f0ca'; }
+        html body .allContents main .tabs label:hover {
+          color: #888;
+          cursor: pointer; }
+        html body .allContents main .tabs input:checked + label {
+          color: #555;
+          border: 1px solid #ddd;
+          border-top: 2px solid orange;
+          border-bottom: 1px solid #fff; }
+        html body .allContents main .tabs #posts:checked ~ #contentPosts,
+        html body .allContents main .tabs #albums:checked ~ #contentAlbums,
+        html body .allContents main .tabs #todos:checked ~ #contentTodos {
+          display: block; }
+      html body .allContents main .usersContent {
+        height: auto;
+        width: auto;
+        background-color: lightsalmon; }
+        html body .allContents main .usersContent h1, html body .allContents main .usersContent p, html body .allContents main .usersContent img {
+          margin: 0px;
+          padding-top: 10px; }
+        html body .allContents main .usersContent h1 {
+          padding-top: 20px;
+          padding-bottom: 0px; }
+        html body .allContents main .usersContent .card img {
+          height: 100px;
+          width: 50%; }
+        html body .allContents main .usersContent .card .btns {
+          padding-top: 15px; }
+          html body .allContents main .usersContent .card .btns button {
+            height: 30px;
+            width: 30px;
+            border-radius: 12px;
+            margin: 0px 8px; }
 
 @media screen and (max-width: 650px) {
   /* tabs info posts / albums / todos */

@@ -1,91 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>SePas</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <title>SePas</title>
+    </head>
 
-<body>
+    <body>
 
-    <div class="allContents">
+        <div class="allContents">
 
-        <header>
-            <hgroup>
-                <h1>Semantic PostSmasher</h1>
-                <h3>a real semantic postsmasher</h3>
-            </hgroup>
-        </header>
+            <header>
+                <hgroup>
+                    <h1>Semantic PostSmasher</h1>
+                    <h3>a real semantic postsmasher</h3>
+                </hgroup>
+            </header>
 
-        <main>
+            <main>
 
-            <div class="usersContent">
-                <div class="card">
-                    <section>
-                        <h1>Nome Cognome</h1>
-                        <p>email@fio porco.com</p>
-                        <img src="img/card.png"></img>
-                        <div class="btns">
-                            <button id="view"></button>
-                            <button id="modify"></button>
-                            <button id="delete"></button>
-                        </div>
+                <div class="usersContent">
+                    <!--div class="card">
+                        <section>
+                            <h1>Nome Cognome</h1>
+                            <img src="img/card.png"></img>
+                            <p>email@fio porco.com</p>
+                            <div class="btns">
+                                <button id="view"></button>
+                                <button id="modify"></button>
+                                <button id="delete"></button>
+                            </div>
+                        </section>
+                    </div-->
+                </div>                
+
+                <div class="tabs">
+
+                    <input id="posts" type="radio" name="tabs" checked>
+                    <label for="posts">Posts</label>
+
+                    <input id="albums" type="radio" name="tabs">
+                    <label for="albums">Albums</label>
+
+                    <input id="todos" type="radio" name="tabs">
+                    <label for="todos">ToDos</label>
+
+                    <section id="contentPosts">
+                        <h1>titolo</h1>
+                        <p>
+                            Brisket meatball turkey short loin boudin leberkas meatloaf chuck andouille pork loin pastrami spare ribs pancetta rump.
+                            Frankfurter corned beef beef tenderloin short loin meatloaf swine ground round venison.
+                        </p>
+                    </section>
+
+                    <section id="contentAlbums">
+                        <h1>titolo</h1>
+                        <p>
+                            Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon brisket beef kevin tenderloin
+                            porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye landjaeger beef kevin tail meatball
+                            pastrami prosciutto pancetta. Tail kevin spare ribs ground round ham ham hock brisket shoulder. Corned
+                            beef tri-tip leberkas flank sausage ham hock filet mignon beef ribs pancetta turkey.
+                        </p>
+                    </section>
+
+                    <section id="contentTodos">
+                        <h1>titolo</h1>
+                        <p>
+                            Brisket meatball turkey short loin boudin leberkas meatloaf chuck andouille pork loin pastrami spare ribs pancetta rump.
+                            Frankfurter corned beef beef tenderloin short loin meatloaf swine ground round venison.
+                        </p>
                     </section>
                 </div>
-            </div>
+            </main>
 
-            <div class="tabs">
+            <footer>
+                <p>Copyright &copy; | McFlyZa | 2018 |
+                    <a href="https://github.com/mcflyz/semanticpostsmash">Source code</a>
+                </p>
+            </footer>
 
-                <input id="posts" type="radio" name="tabs" checked>
-                <label for="posts">Posts</label>
+        </div>
 
-                <input id="albums" type="radio" name="tabs">
-                <label for="albums">Albums</label>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="js/app.js" async></script>
 
-                <input id="todos" type="radio" name="tabs">
-                <label for="todos">ToDos</label>
-
-                <section id="contentPosts">
-                    <h1>titolo</h1>
-                    <p>
-                        Brisket meatball turkey short loin boudin leberkas meatloaf chuck andouille pork loin pastrami spare ribs pancetta rump.
-                        Frankfurter corned beef beef tenderloin short loin meatloaf swine ground round venison.
-                    </p>
-                </section>
-
-                <section id="contentAlbums">
-                    <h1>titolo</h1>
-                    <p>
-                        Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon brisket beef kevin tenderloin
-                        porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye landjaeger beef kevin tail meatball
-                        pastrami prosciutto pancetta. Tail kevin spare ribs ground round ham ham hock brisket shoulder. Corned
-                        beef tri-tip leberkas flank sausage ham hock filet mignon beef ribs pancetta turkey.
-                    </p>
-                </section>
-
-                <section id="contentTodos">
-                    <h1>titolo</h1>
-                    <p>
-                        Brisket meatball turkey short loin boudin leberkas meatloaf chuck andouille pork loin pastrami spare ribs pancetta rump.
-                        Frankfurter corned beef beef tenderloin short loin meatloaf swine ground round venison.
-                    </p>
-                </section>
-            </div>
-        </main>
-
-        <footer>
-            <p>Copyright &copy; | McFlyZa | 2018 |
-                <a href="https://github.com/mcflyz/semanticpostsmash">Source code</a>
-            </p>
-        </footer>
-
-    </div>
-
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="js/app.js" async></script>
-
-</body>
+    </body>
 
 </html>
