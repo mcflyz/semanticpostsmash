@@ -177,8 +177,8 @@ html {
 
     html body .allContents main .usersContent .card {
         
-        height: 165px;
-        width: 30%;
+        height: 175px;
+        width: 35%;
 
         section{
             margin-top: 25px;
@@ -216,11 +216,7 @@ html {
 @media screen and (max-width: 400px) {
 
     html body .allContents main .usersContent .card {
-        
-        height: 160px;
-        width: 30%;
         font-size: 12px;
-    
     }
 
     /* tabs info posts / albums / todos */

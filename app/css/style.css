@@ -138,3 +138,15 @@ html {
   label {
     padding: 15px; }
   /* END tabs info posts / albums / todos */ }
+
+  /*
+label:before {
+    font-family: fontawesome;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+  label[for*='view']:before { content: '\f231'; }
+  label[for*='modify']:before { content: '\f030'; }
+  label[for*='delete']:before { content: '\f0ca'; }
+  */
