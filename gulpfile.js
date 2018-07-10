@@ -35,7 +35,7 @@ gulp.task('css', () => gulp.src('app/css/*.css')
 );
 
 gulp.task('js', () => gulp.src('app/js/*.js')
-                            .pipe(concat('script.js'))
+                            .pipe(concat('app.js'))
                             .pipe(uglify())
                             .pipe(gulp.dest('dist/js'))
 );
