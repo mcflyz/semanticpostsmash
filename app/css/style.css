@@ -73,8 +73,7 @@ html {
           display: block; }
       html body .allContents main .usersContent {
         height: auto;
-        width: auto;
-        background-color: lightsalmon; }
+        width: auto; }
         html body .allContents main .usersContent h1, html body .allContents main .usersContent p, html body .allContents main .usersContent img {
           margin: 0px;
           padding-top: 10px; }
@@ -84,7 +83,9 @@ html {
         html body .allContents main .usersContent .card {
           height: 200px;
           width: 30%;
-          padding: 12px; }
+          padding: 0px;
+          margin: 20px 10px;
+          background-color: lightcyan; }
           html body .allContents main .usersContent .card section {
             margin-top: 12px; }
           html body .allContents main .usersContent .card img {
@@ -98,15 +99,28 @@ html {
               width: 30px;
               border-radius: 12px;
               margin: 0px 8px;
-              border: 0px; }
+              border: 0px;
+              padding: 0px; }
     html body .allContents footer {
       padding: 25px 0px; }
       html body .allContents footer p {
         margin-bottom: 0px; }
 
 @media screen and (max-width: 650px) {
-  .usersContent {
-    flex-direction: column; }
+  html body .allContents main .usersContent .card {
+    height: 165px;
+    width: 30%; }
+    html body .allContents main .usersContent .card section {
+      margin-top: 25px; }
+      html body .allContents main .usersContent .card section img {
+        height: 60px;
+        width: 60px; }
+      html body .allContents main .usersContent .card section p {
+        display: none; }
+    html body .allContents main .usersContent .card .btns button {
+      height: 20px;
+      width: 20px;
+      border-radius: 10px; }
   /* tabs info posts / albums / todos */
   label {
     font-size: 0; }
@@ -116,8 +130,10 @@ html {
   /* END tabs info posts / albums / todos */ }
 
 @media screen and (max-width: 400px) {
-  .usersContent {
-    flex-direction: column; }
+  html body .allContents main .usersContent .card {
+    height: 160px;
+    width: 30%;
+    font-size: 12px; }
   /* tabs info posts / albums / todos */
   label {
     padding: 15px; }
