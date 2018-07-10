@@ -27,9 +27,9 @@ html {
       margin: 0 0 20px;
       line-height: 1.5; }
     html body .allContents main {
-      min-width: 320px;
+      min-width: 200px;
       max-width: 800px;
-      padding: 50px;
+      padding: 25px 25px 10px 25px;
       margin: 0 auto;
       background: #fff;
       /* tabs info posts / albums / todos */ }
@@ -99,8 +99,14 @@ html {
               border-radius: 12px;
               margin: 0px 8px;
               border: 0px; }
+    html body .allContents footer {
+      padding: 25px 0px; }
+      html body .allContents footer p {
+        margin-bottom: 0px; }
 
 @media screen and (max-width: 650px) {
+  .usersContent {
+    flex-direction: column; }
   /* tabs info posts / albums / todos */
   label {
     font-size: 0; }
@@ -110,6 +116,8 @@ html {
   /* END tabs info posts / albums / todos */ }
 
 @media screen and (max-width: 400px) {
+  .usersContent {
+    flex-direction: column; }
   /* tabs info posts / albums / todos */
   label {
     padding: 15px; }
