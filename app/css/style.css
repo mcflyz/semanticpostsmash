@@ -91,16 +91,30 @@ html {
           html body .allContents main .usersContent .card img {
             height: 75px;
             width: 30%;
-            margin: 0px auto; }
+            margin: 0px auto;
+            border-radius: 40px; }
           html body .allContents main .usersContent .card .btns {
             padding-top: 15px; }
+            html body .allContents main .usersContent .card .btns label:before {
+              font-family: fontawesome;
+              font-weight: normal;
+              margin-right: 10px; }
+            html body .allContents main .usersContent .card .btns label[for*='view']:before {
+              content: '\f2bb'; }
+            html body .allContents main .usersContent .card .btns label[for*='modify']:before {
+              content: '\f085'; }
+            html body .allContents main .usersContent .card .btns label[for*='delete']:before {
+              content: '\f1f8'; }
             html body .allContents main .usersContent .card .btns button {
+              text-align: center;
+              font-size: 25px;
               height: 30px;
               width: 30px;
               border-radius: 12px;
               margin: 0px 8px;
               border: 0px;
-              padding: 0px; }
+              padding: 0px;
+              background-color: lightcyan; }
     html body .allContents footer {
       padding: 25px 0px; }
       html body .allContents footer p {
@@ -108,8 +122,8 @@ html {
 
 @media screen and (max-width: 650px) {
   html body .allContents main .usersContent .card {
-    height: 165px;
-    width: 30%; }
+    height: 175px;
+    width: 35%; }
     html body .allContents main .usersContent .card section {
       margin-top: 25px; }
       html body .allContents main .usersContent .card section img {
@@ -120,7 +134,8 @@ html {
     html body .allContents main .usersContent .card .btns button {
       height: 20px;
       width: 20px;
-      border-radius: 10px; }
+      border-radius: 10px;
+      font-size: 15px; }
   /* tabs info posts / albums / todos */
   label {
     font-size: 0; }
@@ -131,22 +146,10 @@ html {
 
 @media screen and (max-width: 400px) {
   html body .allContents main .usersContent .card {
-    height: 160px;
-    width: 30%;
     font-size: 12px; }
+    html body .allContents main .usersContent .card button {
+      font-size: 10px; }
   /* tabs info posts / albums / todos */
   label {
     padding: 15px; }
   /* END tabs info posts / albums / todos */ }
-
-  /*
-label:before {
-    font-family: fontawesome;
-    font-weight: normal;
-    margin-right: 10px;
-}
-
-  label[for*='view']:before { content: '\f231'; }
-  label[for*='modify']:before { content: '\f030'; }
-  label[for*='delete']:before { content: '\f0ca'; }
-  */
