@@ -11,6 +11,16 @@ html body .allContents main .usersContent .card section {
 html body .allContents main .usersContent {
   flex-direction: row; }
 
+html body .allContents main .tabs .post, html body .allContents main .tabs .album, html body .allContents main .tabs .todo {
+  text-align: center; }
+  html body .allContents main .tabs .post section, html body .allContents main .tabs .album section, html body .allContents main .tabs .todo section {
+    display: block; }
+  html body .allContents main .tabs .post h1, html body .allContents main .tabs .album h1, html body .allContents main .tabs .todo h1 {
+    font-size: 22px;
+    font-weight: bold; }
+  html body .allContents main .tabs .post p, html body .allContents main .tabs .album p, html body .allContents main .tabs .todo p {
+    font-size: 18px; }
+
 /* tabs info posts / albums / todos */
 html {
   text-align: center; }
@@ -22,7 +32,12 @@ html {
     html body .allContents h1 {
       padding: 10px 0;
       font-weight: 400;
-      text-align: center; }
+      text-align: center;
+      margin-bottom: 8px;
+      margin-top: 20px; }
+    html body .allContents h3 {
+      margin-top: 0px;
+      margin-bottom: 30px; }
     html body .allContents p {
       margin: 0 0 20px;
       line-height: 1.5; }
@@ -35,7 +50,7 @@ html {
       /* tabs info posts / albums / todos */ }
       html body .allContents main .tabs {
         padding-top: 30px; }
-        html body .allContents main .tabs section {
+        html body .allContents main .tabs .sectionTabs {
           display: none;
           padding: 20px 0 0;
           border-top: 1px solid #ddd; }
@@ -71,6 +86,12 @@ html {
         html body .allContents main .tabs #albums:checked ~ #contentAlbums,
         html body .allContents main .tabs #todos:checked ~ #contentTodos {
           display: block; }
+        html body .allContents main .tabs .todo h1 {
+          font-weight: normal; }
+        html body .allContents main .tabs .todo .todoT {
+          color: greenyellow; }
+        html body .allContents main .tabs .todo .todoT {
+          color: lightcoral; }
       html body .allContents main .usersContent {
         height: auto;
         width: auto; }
@@ -78,10 +99,14 @@ html {
           margin: 0px;
           padding-top: 10px; }
         html body .allContents main .usersContent h1 {
-          padding-top: 20px;
-          padding-bottom: 0px; }
+          margin-top: 20px;
+          padding-top: 0px;
+          padding-bottom: 0px;
+          font-size: 20px; }
+        html body .allContents main .usersContent h1:hover {
+          background-color: white; }
         html body .allContents main .usersContent .card {
-          height: 200px;
+          height: 230px;
           width: 30%;
           padding: 0px;
           margin: 20px 10px;
@@ -98,7 +123,8 @@ html {
             html body .allContents main .usersContent .card .btns label:before {
               font-family: fontawesome;
               font-weight: normal;
-              margin-right: 10px; }
+              margin-right: 10px;
+              padding: 0px; }
             html body .allContents main .usersContent .card .btns label[for*='view']:before {
               content: '\f2bb'; }
             html body .allContents main .usersContent .card .btns label[for*='modify']:before {
@@ -115,6 +141,9 @@ html {
               border: 0px;
               padding: 0px;
               background-color: lightcyan; }
+              html body .allContents main .usersContent .card .btns button label {
+                margin: 0px;
+                padding: 0px; }
     html body .allContents footer {
       padding: 25px 0px; }
       html body .allContents footer p {
@@ -122,10 +151,13 @@ html {
 
 @media screen and (max-width: 650px) {
   html body .allContents main .usersContent .card {
-    height: 175px;
+    height: 190px;
     width: 35%; }
     html body .allContents main .usersContent .card section {
       margin-top: 25px; }
+      html body .allContents main .usersContent .card section h1 {
+        margin-top: 8px;
+        font-size: 18px; }
       html body .allContents main .usersContent .card section img {
         height: 60px;
         width: 60px; }
@@ -147,6 +179,9 @@ html {
 @media screen and (max-width: 400px) {
   html body .allContents main .usersContent .card {
     font-size: 12px; }
+    html body .allContents main .usersContent .card h1 {
+      margin-top: 5px;
+      font-size: 14px; }
     html body .allContents main .usersContent .card button {
       font-size: 10px; }
   /* tabs info posts / albums / todos */

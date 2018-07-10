@@ -13,6 +13,23 @@
     flex-direction: row;
 }
 
+%tabs{
+    text-align: center;
+
+    section{
+        display: block;
+    }
+
+    h1{
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    p{
+        font-size: 18px;
+    }
+}
+
 /* tabs info posts / albums / todos */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
@@ -33,6 +50,13 @@ html {
                 padding: 10px 0;
                 font-weight: 400;
                 text-align: center;
+                margin-bottom: 8px;
+                margin-top: 20px;
+            }
+
+            h3{
+                margin-top: 0px;
+                margin-bottom: 30px;
             }
 
             p {
@@ -49,10 +73,9 @@ html {
             
                 /* tabs info posts / albums / todos */
                 .tabs{
-
                     padding-top: 30px;
 
-                    section {
+                    .sectionTabs {
                         display: none;
                         padding: 20px 0 0;
                         border-top: 1px solid #ddd;
@@ -99,6 +122,30 @@ html {
                     #todos:checked ~ #contentTodos {
                         display: block;
                     }
+
+                    .post{
+                        @extend %tabs;
+                    }
+
+                    .album{
+                        @extend %tabs;
+                    }
+
+                    .todo{
+                        @extend %tabs;
+
+                        h1{
+                            font-weight: normal;
+                        }
+                        
+                        .todoT{
+                            color: greenyellow;
+                        }
+
+                        .todoT{
+                            color: lightcoral;
+                        }
+                    }
                 
                 } // end tabs
 
@@ -116,13 +163,19 @@ html {
                     }
 
                     h1{
-                       padding-top: 20px;
-                       padding-bottom: 0px; 
+                        margin-top: 20px;
+                        padding-top: 0px;
+                        padding-bottom: 0px;
+                        font-size: 20px;
+                    }
+
+                    h1:hover {
+                        background-color: white;
                     }
 
                     .card{
 
-                        height: 200px;
+                        height: 230px;
                         width: 30%;
                         padding: 0px;
                         margin: 20px 10px;
@@ -144,11 +197,11 @@ html {
 
                             padding-top: 15px;
 
-                            
                             label:before {
                                 font-family: fontawesome;
                                 font-weight: normal;
                                 margin-right: 10px;
+                                padding: 0px;
                             }
 
                             label[for*='view']:before { content: '\f2bb'; }
@@ -165,6 +218,12 @@ html {
                                 border: 0px;
                                 padding: 0px;
                                 background-color: lightcyan;
+
+                                label{
+                                    margin: 0px;
+                                    padding: 0px;
+                                }
+
                             }
 
                         }
@@ -192,15 +251,22 @@ html {
 
     html body .allContents main .usersContent .card {
         
-        height: 175px;
+        height: 190px;
         width: 35%;
 
         section{
             margin-top: 25px;
+
+            h1{
+                margin-top: 8px;
+                font-size:18px;
+            }
+
             img{
                 height: 60px;
                 width: 60px;
             }
+
             p{
                 display: none;
             }
@@ -233,6 +299,11 @@ html {
 
     html body .allContents main .usersContent .card {
         font-size: 12px;
+
+        h1{
+            margin-top: 5px;
+            font-size:14px;
+        }
 
         button{
             font-size: 10px;
