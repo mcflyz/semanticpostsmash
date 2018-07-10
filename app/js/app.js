@@ -1,7 +1,8 @@
-const newBtnWithId = (id) => $('<button></button>').attr('id', id);
+const newBtnWithClass = (btnClass) => $('<button></button>').attr('class', btnClass);
+const newBtnWithClassAndUserData = (btnClass, dataUserId) => newBtnWithClass(btnClass).attr('data-user-id', dataUserId);
 const newLabelWithFor = (forLabel) => $('<label></label>').attr('for', forLabel);
 const newSectionWithTitle = (title) => $('<section></section>').append('<h1></h1>').text(title);
-const newSectionWithTitleAndDataUser = (title, id) => newSectionWithTitle(title).attr('data-user-id', id);
+const newSectionWithTitleAndUserData = (title, dataUserId) => newSectionWithTitle(title).attr('data-user-id', dataUserId);
 const newParaWithText = (text) => $('<p></p>').text(text);
 const newDivWithClass = (divClass) => $('<div></div>').attr('class', divClass);
 const newDivWithClassAndId = (divClass, divId) =>  newDivWithClass(divClass).attr('id', divId);
@@ -38,11 +39,11 @@ function findUsers() {
 
 }
 
-function insertBtns(whereAppend){
+function insertBtns(id, whereAppend){
 
-    let btnView = newBtnWithId('view').append(newLabelWithFor('view'));
-    let btnModify = newBtnWithId('modify').append(newLabelWithFor('modify'));
-    let btnDelete = newBtnWithId('delete').append(newLabelWithFor('delete'));
+    let btnView = newBtnWithClassAndUserData('view', id).append(newLabelWithFor('view'));
+    let btnModify = newBtnWithClassAndUserData('modify', id).append(newLabelWithFor('modify'));
+    let btnDelete = newBtnWithClassAndUserData('delete', id).append(newLabelWithFor('delete'));
 
     $(whereAppend).append(newDivWithClass('btns').append(btnView, btnModify, btnDelete));
 
@@ -51,7 +52,7 @@ function insertBtns(whereAppend){
 function createCard(user, whereAppend){
     
     let divCard = newDivWithClass('card');
-    let section = newSectionWithTitleAndDataUser(user.name, user.id);
+    let section = newSectionWithTitleAndUserData(user.name, user.id);
     let imgCard = $('<img></img>').attr('src', `img/card${user.id}.png`);
     let parCard = newParaWithText(user.email);
 
@@ -59,7 +60,7 @@ function createCard(user, whereAppend){
     divCard.append(section);
     $(whereAppend).append(divCard);
 
-    insertBtns(`*[data-user-id="${user.id}"]`);
+    insertBtns(user.id,`*[data-user-id="${user.id}"]`);
 
 }
 
@@ -83,6 +84,6 @@ function findPostsOfSpecificUser(id) {
 findUsers();
 
 //for(let i = 0; i<10; ++i) findPostsOfSpecificUser(i);
-const notify = (event) => console.log(event.target);
+const notify = ev => findPostsOfSpecificUser($(ev.target).parent('button').attr('data-user-id'));
 
-$('.btns button').on( "click", notify );
+$('body').on( "click", '.btns button', notify);
