@@ -18,6 +18,9 @@ const addPost = post => newSectionWithTitle(post.title).append($('<p></p>').text
 const addAlbum = post => newSectionWithTitle(post.title).append($('<p></p>').text(post.body));
 const addTodo = todo => (todo.completed) ? newParaWithText(todo.title).css('color', 'greenyellow') : newParaWithText(todo.title).css('color', 'lightcoral');
 
+const modalView = (event) => findUserById($(event.target).parent('button').attr('data-user-id'));
+const modalDelete = (event) => remove(`https://jsonplaceholder.typicode.com/users/${$(event.target).parent('button').attr('data-user-id')}`);
+
 const getId = (event) => $(event.target).attr('data-user-id');
 
 //hendler error
@@ -32,6 +35,7 @@ function userData(ev){
     findTodosOfSpecificUser(id);
 
 }
+
 //generic find
 function find(url, callback) {
     
@@ -43,6 +47,20 @@ function find(url, callback) {
         error: handleError
     });
 
+}
+
+//delete user function
+function remove(url) {
+    $.ajax({
+        type: "DELETE",
+        url: url,
+        success: function (data, textStatus, jqXHR) {
+            console.log("remove successfully");
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log("remove error: " + textStatus);
+        }
+    });
 }
 
 //fetch users
@@ -59,7 +77,7 @@ function findUsers() {
 }
 
 //fetch user
-function findUserById(id) {
+function findUserById(id, callback) {
     
     let url = `https://jsonplaceholder.typicode.com/users/${id}`;
 
@@ -172,10 +190,6 @@ function createTodos(todos, whereAppend){
 
 }
 
-const modalView = (event) => findUserById($(event.target).parent('button').attr('data-user-id'));
-const modalDelete = (event) => findUserById($(event.target).parent('button').attr('data-user-id'));
-
-
 function showInfo(user, whereAppend){
 
     let section = newSectionWithTitle(user.name);
@@ -202,5 +216,8 @@ $('body').on( "click", '.card h1', userData);
 //eventListner on view button in '.btns'
 $('body').on( "click", '.btns .view', modalView);
 
+//eventListner on modify button in '.btns'
+$('body').on( "click", '.btns .modify', modalModify);
+
 //eventListner on delete button in '.btns'
-$('body').on( "click", '.btns .view', modalDelete);
+$('body').on( "click", '.btns .delete', modalDelete);
