@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-html body .allContents main .usersContent, html body .allContents main .usersContent .card section {
+html body .allContents main .usersContent .card section, html body .allContents main .usersContent {
   display: flex;
   flex-flow: row wrap;
   justify-content: center; }
 
-html body .allContents main .usersContent, html body .allContents main .usersContent .card section {
+html body .allContents main .usersContent .card section {
   flex-direction: column; }
+
+html body .allContents main .usersContent {
+  flex-direction: row; }
 
 /* tabs info posts / albums / todos */
 html {
@@ -78,16 +81,24 @@ html {
         html body .allContents main .usersContent h1 {
           padding-top: 20px;
           padding-bottom: 0px; }
-        html body .allContents main .usersContent .card img {
-          height: 100px;
-          width: 50%; }
-        html body .allContents main .usersContent .card .btns {
-          padding-top: 15px; }
-          html body .allContents main .usersContent .card .btns button {
-            height: 30px;
-            width: 30px;
-            border-radius: 12px;
-            margin: 0px 8px; }
+        html body .allContents main .usersContent .card {
+          height: 200px;
+          width: 30%;
+          padding: 12px; }
+          html body .allContents main .usersContent .card section {
+            margin-top: 12px; }
+          html body .allContents main .usersContent .card img {
+            height: 75px;
+            width: 30%;
+            margin: 0px auto; }
+          html body .allContents main .usersContent .card .btns {
+            padding-top: 15px; }
+            html body .allContents main .usersContent .card .btns button {
+              height: 30px;
+              width: 30px;
+              border-radius: 12px;
+              margin: 0px 8px;
+              border: 0px; }
 
 @media screen and (max-width: 650px) {
   /* tabs info posts / albums / todos */
