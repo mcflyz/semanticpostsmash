@@ -12,23 +12,26 @@ const newParaWithTextAndClass = (text, paraClass) => newParaWithText(text).addCl
 const newDivWithClass = (divClass) => $('<div></div>').attr('class', divClass);
 const newDivWithClassAndId = (divClass, divId) =>  newDivWithClass(divClass).attr('id', divId);
 
+const newLink = (href) => $('<a></a>').attr('href', href);
+
+const addPost = post => newSectionWithTitle(post.title).append($('<p></p>').text(post.body));
+const addAlbum = post => newSectionWithTitle(post.title).append($('<p></p>').text(post.body));
+const addTodo = todo => (todo.completed) ? newParaWithText(todo.title).css('color', 'greenyellow') : newParaWithText(todo.title).css('color', 'lightcoral');
+
+const getId = (event) => $(event.target).attr('data-user-id');
+
 //hendler error
 const handleError = (xhr, status, error) => console.log(`ERROR!!\nStatus: ${status}\nMessage error:${error}`);
 
 function userData(ev){
 
-    let id = $(ev.target).attr('data-user-id');
+    let id = getId(ev);
 
     findPostsOfSpecificUser(id);
     findAlbumsOfSpecificUser(id);
     findTodosOfSpecificUser(id);
 
 }
-
-const addPost = post => newSectionWithTitle(post.title).append($('<p></p>').text(post.body));
-const addAlbum = post => newSectionWithTitle(post.title).append($('<p></p>').text(post.body));
-const addTodo = todo => (todo.completed) ? newParaWithText(todo.title).css('color', 'greenyellow') : newParaWithText(todo.title).css('color', 'lightcoral');
-
 //generic find
 function find(url, callback) {
     
@@ -55,13 +58,32 @@ function findUsers() {
 
 }
 
+//fetch user
+function findUserById(id) {
+    
+    let url = `https://jsonplaceholder.typicode.com/users/${id}`;
+
+    callback = user => showInfo(user, '#modalView');
+    
+    find(url,callback);
+
+}
+
 function insertBtns(id, whereAppend){
 
     let btnView = newBtnWithClassAndUserData('view', id).append(newLabelWithFor('view'));
     let btnModify = newBtnWithClassAndUserData('modify', id).append(newLabelWithFor('modify'));
     let btnDelete = newBtnWithClassAndUserData('delete', id).append(newLabelWithFor('delete'));
 
-    $(whereAppend).append(newDivWithClass('btns').append(btnView, btnModify, btnDelete));
+    let linkView = newLink('#openModalView');
+    let linkModify = newLink('#openModalModify');
+    let linkDelete = newLink('#openModalDelete');
+
+    linkView.append(btnView);
+    linkModify.append(btnModify);
+    linkDelete.append(btnDelete);
+
+    $(whereAppend).append(newDivWithClass('btns').append(linkView, linkModify, linkDelete));
 
 };
 
@@ -113,8 +135,6 @@ function findTodosOfSpecificUser(id){
 
 }
 
-
-
 function createPosts(posts, whereAppend){
 
     $('#postInit').css('display', 'none');
@@ -145,17 +165,42 @@ function createTodos(todos, whereAppend){
 
     let divTodo = newDivWithClass('divTodos');
 
-    todos.forEach( (todo) => {
-        $(divTodo).append(addTodo(todo).attr('class', 'todo'))
-        console.log(todo.completed);
-    });
+    todos.forEach( (todo) => $(divTodo).append(addTodo(todo).attr('class', 'todo')));
     
 
     $(whereAppend).html(divTodo);
 
 }
 
+const modalView = (event) => findUserById($(event.target).parent('button').attr('data-user-id'));
+const modalDelete = (event) => findUserById($(event.target).parent('button').attr('data-user-id'));
+
+
+function showInfo(user, whereAppend){
+
+    let section = newSectionWithTitle(user.name);
+    let address = "street: " + user.address.street + "suite: " + user.address.suite + " city: " + user.address.city;
+
+    let username = newParaWithText(user.username);
+    let email = newParaWithText(user.email);
+    let addressP = newParaWithText(address);
+    let phone = newParaWithText(user.phone);
+    let website = newParaWithText(user.website);
+
+    section.append(username, email, addressP, phone, website);
+
+    $(whereAppend).html(section);
+
+}
+
+//start fetching info
 findUsers();
 
 //eventListner on <h1> in '.card'
 $('body').on( "click", '.card h1', userData);
+
+//eventListner on view button in '.btns'
+$('body').on( "click", '.btns .view', modalView);
+
+//eventListner on delete button in '.btns'
+$('body').on( "click", '.btns .view', modalDelete);
