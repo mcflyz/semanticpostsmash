@@ -3,7 +3,6 @@
     flex-flow: row wrap;
     justify-content: center;
 }
-
 %flexwrapcol{
     @extend %flexwrap;
     flex-direction: column;
@@ -12,40 +11,30 @@
     @extend %flexwrap;
     flex-direction: row;
 }
-
 %tabs{
     text-align: center;
-
     section{
         display: block;
     }
-
     h1{
         font-size: 22px;
         font-weight: bold;
     }
-
     p{
         font-size: 18px;
     }
 }
-
 /* tabs info posts / albums / todos */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-
 html {
   text-align: center;
-
     body {
-
         height: 100vh;
         color: #555;
         background: #eee;
         font: 14px/1 'Open Sans', sans-serif;
-
         .allContents{
-
             h1 {
                 padding: 10px 0;
                 font-weight: 400;
@@ -53,38 +42,31 @@ html {
                 margin-bottom: 8px;
                 margin-top: 20px;
             }
-
             h3{
                 margin-top: 0px;
                 margin-bottom: 30px;
             }
-
             p {
                 margin: 0 0 20px;
                 line-height: 1.5;
             }
-
             main {
                 min-width: 200px;
                 max-width: 800px;
                 padding: 25px 25px 10px 25px;
                 margin: 0 auto;
                 background: #fff;
-            
                 /* tabs info posts / albums / todos */
                 .tabs{
                     padding-top: 30px;
-
                     .sectionTabs {
                         display: none;
                         padding: 20px 0 0;
                         border-top: 1px solid #ddd;
                     }
-
                     input {
                         display: none;
                     }
-
                     label {
                         display: inline-block;
                         margin: 0 0 -1px;
@@ -94,13 +76,11 @@ html {
                         color: #bbb;
                         border: 1px solid transparent;
                     }
-
                     label:before {
                         font-family: fontawesome;
                         font-weight: normal;
                         margin-right: 10px;
                     }
-
                     label[for*='posts']:before { content: '\f231'; }
                     label[for*='albums']:before { content: '\f030'; }
                     label[for*='todos']:before { content: '\f0ca'; }
@@ -109,101 +89,71 @@ html {
                         color: #888;
                         cursor: pointer;
                     }
-
                     input:checked + label {
                         color: #555;
                         border: 1px solid #ddd;
                         border-top: 2px solid orange;
                         border-bottom: 1px solid #fff;
                     }
-
                     #posts:checked ~ #contentPosts,
                     #albums:checked ~ #contentAlbums,
                     #todos:checked ~ #contentTodos {
                         display: block;
                     }
-
                     .post{
                         @extend %tabs;
                     }
-
                     .album{
                         @extend %tabs;
                     }
-
                     .todo{
                         @extend %tabs;
-
                         h1{
                             font-weight: normal;
                         }
-                        
-                        .todoT{
-                            color: greenyellow;
-                        }
-
-                        .todoT{
-                            color: lightcoral;
-                        }
                     }
-                
                 } // end tabs
-
                 .usersContent{
-
                     @extend %flexwraprow;
-
                     height: auto;
                     width: auto;
-                    
-
                     h1, p, img{
                         margin: 0px;
                         padding-top: 10px;
                     }
-
                     h1{
                         margin-top: 20px;
                         padding-top: 0px;
                         padding-bottom: 0px;
                         font-size: 20px;
                     }
-
                     h1:hover {
                         background-color: white;
                     }
-
                     .card{
-
                         height: 230px;
                         width: 30%;
                         padding: 0px;
                         margin: 20px 10px;
                         background-color: lightcyan;
-
                         section{
                             @extend %flexwrapcol;
                             margin-top: 12px;
                         }
-                        
                         img{
                             height: 75px;
                             width: 30%;
                             margin: 0px auto;
                             border-radius: 40px;
                         }
-
                         .btns{
-
                             padding-top: 15px;
-
                             label:before {
                                 font-family: fontawesome;
                                 font-weight: normal;
                                 margin-right: 10px;
                                 padding: 0px;
                             }
-
                             label[for*='view']:before { content: '\f2bb'; }
                             label[for*='modify']:before { content: '\f085'; }
                             label[for*='delete']:before { content: '\f1f8'; }
@@ -218,33 +168,23 @@ html {
                                 border: 0px;
                                 padding: 0px;
                                 background-color: lightcyan;
-
                                 label{
                                     margin: 0px;
                                     padding: 0px;
                                 }
-
                             }
-
                         }
                     }
-
                 } //end .usersContent
-
             } // end <main>
-
             footer{
                 padding: 25px 0px;
-
                 p{
                     margin-bottom: 0px;
                 }
             }
-        
         } // end .allContents
-
     } // end <body>
-
 } //end <html>
 
 .modalbg {
@@ -264,7 +204,6 @@ html {
   display: block;
   pointer-events: none;
 }
-
 .modalbg .dialog {
   width: 400px;
   position: relative;
@@ -282,11 +221,9 @@ html {
   -moz-box-shadow: 0 0 10px #000;
   -webkit-box-shadow: 0 0 10px #000;
 }
-
 .modalbg .dialog .ie7 {
   filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=3);
 }
-
 .modalbg:target {
   display: block;
   pointer-events: auto;
@@ -296,7 +233,6 @@ html {
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
-
 .modalbg:target .dialog {
   top: -20px;
   -moz-transition: all 0.8s ease-out;
@@ -305,7 +241,6 @@ html {
   transition: all 0.8s ease-out;
   -transition-delay: 0.4s;
 }
-
 .close {
   background: #606061;
   color: #FFFFFF;
@@ -329,11 +264,9 @@ html {
   transition: all 0.5s ease-out;
   -transition-delay: 0.2s;
 }
-
 .close .ie7 {
   filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=3);
 }
-
 .close:hover {
   background: #00d9ff;
   -moz-transition: all 0.5s ease-out;
@@ -341,51 +274,40 @@ html {
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
 }
-
 .fineprint {
   font-style: italic;
   font-size: 10px;
   color: #646;
 }
-
 a {
   text-decoration: none;
 }
 
 @media screen and (max-width: 650px) {
-
     html body .allContents main .usersContent .card {
-        
         height: 190px;
         width: 35%;
-
         section{
             margin-top: 25px;
-
             h1{
                 margin-top: 8px;
                 font-size:18px;
             }
-
             img{
                 height: 60px;
                 width: 60px;
             }
-
             p{
                 display: none;
             }
         }
-
         .btns{
-
             button{
                 height: 20px;
                 width: 20px;
                 border-radius: 10px;
                 font-size: 15px;
             }
-
         }
     }
 
@@ -401,21 +323,16 @@ a {
 }
 
 @media screen and (max-width: 400px) {
-
     html body .allContents main .usersContent .card {
         font-size: 12px;
-
         h1{
             margin-top: 5px;
             font-size:14px;
         }
-
         button{
             font-size: 10px;
         }
-
     }
-
     /* tabs info posts / albums / todos */
     label {
         padding: 15px;
