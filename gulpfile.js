@@ -5,15 +5,6 @@ sass = require('gulp-sass'),
 browserSync = require('browser-sync').create(),
 uglify = require('gulp-uglify-es').default;
 
-//all files are moved to dist
-//html -> update user html
-//css -> update user css
-//js -> update user js
-//js-lib -> update js libs
-//css-lib -> update css libs
-//default -> update user html, css, js
-//full -> update everything
-
 //single tasks
 gulp.task('sass', () => gulp.src('app/scss/**/*.scss')
                             .pipe(sass())
