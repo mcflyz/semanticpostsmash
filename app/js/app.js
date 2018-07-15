@@ -23,7 +23,7 @@ const modalDelete = (event) => remove(`https://jsonplaceholder.typicode.com/user
 
 const getId = (event) => $(event.target).attr('data-user-id');
 
-//hendler error
+//handler error
 const handleError = (xhr, status, error) => console.log(`ERROR!!\nStatus: ${status}\nMessage error:${error}`);
 
 function userData(ev) {
